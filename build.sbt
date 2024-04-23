@@ -6,3 +6,13 @@ lazy val root = (project in file("."))
   .settings(
     name := "realworld-backend-scala-akka"
   )
+
+resolvers += "Akka library repository".at("https://repo.akka.io/maven")
+
+val AkkaVersion = "2.9.2"
+val AkkaHttpVersion = "10.6.2"
+libraryDependencies ++= Seq(
+  "com.typesafe.akka" %% "akka-actor-typed" % AkkaVersion,
+  "com.typesafe.akka" %% "akka-stream" % AkkaVersion,
+  "com.typesafe.akka" %% "akka-http" % AkkaHttpVersion
+)
